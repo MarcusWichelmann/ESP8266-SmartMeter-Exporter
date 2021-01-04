@@ -12,3 +12,11 @@
 
 // Webserver settings
 #define WEBSERVER_PORT 80
+
+// Updater settings
+#define UPDATER_USERNAME "admin"
+#define UPDATER_PASSWORD "PASSWORD"
+
+// Pins for the serial reader
+#define IR_SERIAL_RX 4 // GPIO4
+#define IR_SERIAL_TX 5 // GPIO5
