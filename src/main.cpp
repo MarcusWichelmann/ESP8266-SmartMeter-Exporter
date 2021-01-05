@@ -125,6 +125,9 @@ void handleRootRequest()
 void handleMetricsRequest()
 {
   static const char *metricsTemplate =
+      "# HELP esp_uptime The uptime of the ESP in milliseconds.\n"
+      "# TYPE esp_uptime counter\n"
+      "esp_uptime %u\n\n"
       "# HELP smartmeter_total_energy_used The total energy used in kWh.\n"
       "# TYPE smartmeter_total_energy_used counter\n"
       "smartmeter_total_energy_used{sn=\"%s\"} %f\n\n"
@@ -150,8 +153,9 @@ void handleMetricsRequest()
     return;
   }
 
-  char responseBuffer[1024];
+  char responseBuffer[1500];
   snprintf(responseBuffer, sizeof(responseBuffer), metricsTemplate,
+           millis(),
            _statSerialNumber, _statEnergyUsed,
            _statSerialNumber, _statEnergyProduced,
            _statSerialNumber, _statPowerL1,
