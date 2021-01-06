@@ -8,7 +8,9 @@ The writing/reading head should then be connected to some pins on the ESP that a
 
 ## Compatibility
 
-This code is currently only compatible with the `EasyMeter Q3D` model of a german manufacturer. This Smartmeter uses a OBIS-based text format to transmit it's data. I'm open for pull requests that extend the support to other models. Also support for the more broadly used SML protocol should be fairly easy to add.
+This code is currently only compatible with the `EasyMeter Q3D` model of a german manufacturer. This Smartmeter uses a OBIS-based text format to transmit it's data in a 2 second interval. Requesting data using an infrared LED on the ESP side is not required for this model, but I added support for this to my code anyway.
+
+I'm open for pull requests that extend the support to other models. Also support for the more broadly used SML protocol should be fairly easy to add.
 
 ## Configuration
 
